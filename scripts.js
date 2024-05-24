@@ -33,7 +33,7 @@ console.log(filteredProducts);
 console.log("Price Manipulation:");
 // Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
 const totalPrice = products
-  .filter((product) => product.price !== "" && !isNaN(product.price)) // Filter out products without prices or with non-numeric prices.
+  .filter((product) => product.price !== "" && !isNaN(parseFloat(product.price))) // Filter out products without prices or with non-numeric prices.
   .map((product) => parseFloat(product.price)) // Convert string prices to numbers.
   .reduce((total, price) => total + price, 0); // Calculate the total price using reduce.
 console.log("Total Price:", totalPrice);
